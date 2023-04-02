@@ -21,7 +21,7 @@ public class MemberDAO {
 	}
 	
 	public MemberDAO() {	
-		//byte단위
+		//byte 단위
 		InputStream inputStream;
 		try {
 			inputStream = Resources.getResourceAsStream("mybatis-config.xml");
