@@ -24,9 +24,12 @@ public class LoginService implements CommandProcess {
 		//DB
 		MemberDAO memberDAO = MemberDAO.getInstance();
 		
-		MemberDTO memberDTO = memberDAO.memberLogin(id, pwd);
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		MemberDTO memberDTO = memberDAO.memberLogin(map);
+		
 		System.out.println(memberDTO);
-	
 		
 		//응답
 		if(memberDTO == null) {

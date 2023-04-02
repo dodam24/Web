@@ -33,21 +33,10 @@ public class MemberDAO {
 		}
 	}
 	
-	public MemberDTO memberLogin(String id, String pwd) {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("id", id);
-		map.put("pwd", pwd);
-		System.out.println(111111111);
-		System.out.println(map.get("id"));
-		
+	public MemberDTO memberLogin(Map<String, String> map) {	
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		
-		System.out.println(map);
 		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.memberLogin", map);
-		
 		sqlSession.close();
-		
-		
 		return memberDTO;
 	}
 	
