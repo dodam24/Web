@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글검색</title>
+<style type="text/css">
+#seqDiv {
+   color: red;
+   font-size: 8pt;
+   font-weight: bold;
+}
+</style>
+</head>
+<body style="background-color: white;">
+<form name="guestbookSearchForm" method="get" action="/guestbookServlet/GuestbookSearchServlet">
+<div>
+<th>글번호 입력 : </th>
+	<input type="text" name="seq" id="seq">
+	<input type="button" value="검색" onclick="search()">
+	<div id="seqDiv"></div>
+</div>
+</form>
+
+<script type="text/javascript">
+function search(){
+	document.getElementById("seqDiv").innerText = "";
+	
+	if(document.getElementById("seq").value == "")
+		document.getElementById("seqDiv").innerText = "글번호를 입력하세요";
+	else
+		document.guestbookSearchForm.submit();
+}
+</script>
+</body>
+</html>
