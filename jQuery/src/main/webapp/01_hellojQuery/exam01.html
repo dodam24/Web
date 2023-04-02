@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+
+<!-- <script type="text/javascript" src="../js/jquery-3.6.4.min.js"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/"></script> <!-- CDN 방식 -->
+<script type="text/javascript">
+function hello(){
+	var h1 = document.getElementById('hello')
+	//alert(h1.tagName)
+	h1.innerHTML = 'Hello jQuery';
+	h1.innerText = 'Hello jQuery';
+}
+
+//window.onload=function(){ //body 태그를 읽고 난 후에 바로 수행
+//	hello();
+//}
+
+//javascript의 onload 이벤트와 같은 효과
+jQuery(hello);
+
+</script>
+</body>
+</html>
+
+<!-- 
+$()
+- 그냥 이름이 $인 함수 그 자체이다. $ 함수를 호출하는 것이다.
+- jQuery 라이브러리 내부를 보면 window.jQuery = window.$ = jQuery 로 동일한 코드이다.
+
+ -->

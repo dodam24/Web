@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ul {
+   padding: 0;
+   margin: 0;
+   width: 670px;
+   list-style: none;
+}
+li {
+   float: left;
+}
+ul:after {
+   content: '';
+   display: block;
+   float: none;
+   clear: both;
+}
+img {
+   border: none;
+}
+</style>
+</head>
+<body>
+<ul>
+	<li>
+		<a href="#"><img src="../img/jquery.jpg" alt="jQuery" /></a>
+	</li>
+	<li>
+		<a href="#"><img src="../img/javascript.jpg" alt="javascript" /></a>
+	</li>
+	<li>
+		<a href="#"><img src="../img/css.jpg" alt="css" /></a>
+	</li>
+	<li>
+		<a href="#"><img src="../img/html.jpg" alt="html" /></a>
+	</li>
+</ul>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('img[alt="jQuery"]').hover(function(){
+		$(this).attr('src', '../img/jquery_on.jpg');
+	}, function(){
+		$(this).attr('src', '../img/jquery.jpg');
+	});
+	
+	$('img[src="../img/javascript.jpg"]').hover(function(){
+		$(this).attr('src', '../img/javascript_on.jpg');
+	}, function(){
+		$(this).attr('src', '../img/javascript.jpg');
+	});
+	
+	$('img[alt="css"]').hover(function(){
+		$(this).attr('src', '../img/css_on.jpg');
+	}, function(){
+		$(this).attr('src', '../img/css.jpg');
+	});
+	
+	$('img[src="../img/html.jpg"]').hover(function(){
+		$(this).attr('src', '../img/html_on.jpg');
+	}, function(){
+		$(this).attr('src', '../img/html.jpg');
+	});
+});
+</script>
+</body>
+</html>
