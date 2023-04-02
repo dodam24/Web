@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+let sum = 0;
+for(var i=1; i<=10; i++){ //var는 전역변수 역할
+	document.write("i = " + i + "<br/>");
+	sum += i;
+}//for
+
+//document.write("탈출 i = " + i + "<br/>"); //error (i는 지역변수이므로 for문 안에서만 동작)
+//error가 났다고 화면에는 표시되지 않는다
+//F12(개발자 도구 - Uncaught ReferenceError: i is not defined)
+//=> error 해결방안 : let i를 for문 위에서 선언하거나 var i로 변환
+
+document.write("<h1>1부터 10까지의 합은 " + sum + "입니다.</h1>");
+</script>
+</body>
+</html>

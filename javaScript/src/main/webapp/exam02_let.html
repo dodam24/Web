@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+//let은 지역변수(구역 단위)
+let a = 100; 
+a = 250;
+console.log(a) //250
+{
+	
+	let a = 200
+	console.log(a) //200
+	{
+		let a = 300
+		console.log(a) //300
+		{
+			let a = 400
+			console.log(a) //400
+		}
+		
+		console.log(a) //300
+	}
+	console.log(a) //200
+}
+console.log(a) //250
+</script>
+</body>
+</html>

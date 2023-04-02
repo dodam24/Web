@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function insertQuestion(num){
+	alert(num);
+	
+	var str = prompt("사칙연산의 수식을 입력하세요. (예: 100+50)", ""); //prompt(입력상자) 통해서 수식 입력받음
+	var answer = eval(str); //입력받은 문자열을 수식으로 변환
+	var result = "<font color='red'>" +str + " = " + answer + "</font>";
+	
+	document.getElementById("question").innerHTML = result;
+}
+</script>
+</head>
+<body onload="insertQuestion(222)">
+
+<script type="text/javascript">
+	insertQuestion(111); //호출
+</script>
+
+<h1 id="question"></h1>
+</body>
+</html>
+
+<!-- 
+1. body태그를 읽는 도중에 자바스크립트의 insertQuestion(111);이 호출된다.
+=> error 발생 (document.getElementById("question").innerHTML = result;)
+=> 아직 body태그의 <h1 id="question"</h1> 이 부분을 안 읽어서 나오는 error이다.
+
+2. body태그 안의 모든 내용을 실행한 다음에 onload()가 처리된다.
+
+3. onload="insertQuestion(222)" 에서 호출이 되면 이번에는 error가 안 나온다.
+=> body태그의 <h1 id="question"</h1> 이 부분을 읽었기 때문
+ -->
