@@ -16,8 +16,8 @@ public class BoardReplyService implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		//데이터
-		int pseq = Integer.parseInt(request.getParameter("seq")); //DB로 가야하기 때문에 int형으로 받음 //원글이 있는 페이지 번호
-		String pg = request.getParameter("pg"); //DB로 가는 것이 아니면 int형을 문자형(String)으로 받아도 된다.
+		int pseq = Integer.parseInt(request.getParameter("seq")); //원글번호
+		String pg = request.getParameter("pg"); //원글이 있는 페이지 번호(DB로 가는 것이 아니면 int형을 String으로 받아도 된다)
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
 		

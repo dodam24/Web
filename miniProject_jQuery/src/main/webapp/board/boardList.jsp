@@ -50,14 +50,14 @@
 		<th width="150">작성일</th>
 	</tr>
 	
-	<!-- 동적처리 --> <!-- .js에서 처리 -->
+	<!-- 동적처리--> <!-- .js에서 처리 -->
 </table>
 
 <div id="boardPagingDiv" style="margin-top: 15px; width: 850px; text-align: center;"></div>
 
 <script type="text/javascript">
 function boardPaging(pg){
-	//location.href="/miniProject_jQuery/board/boardList.jsp?pg=" + pg;
+	//location.href="/miniProject_jQuery/board/boardList.do?pg=" + pg;
 	location.href="boardList.do?pg=" + pg;
 }
 </script>

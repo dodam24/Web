@@ -13,7 +13,6 @@ public class CheckIdService implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		//데이터
 	    String id = request.getParameter("id");
-	    System.out.println(id);
 		
 	    //DB
 		MemberDAO memberDAO = MemberDAO.getInstance();

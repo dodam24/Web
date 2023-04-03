@@ -10,8 +10,13 @@ public class LogoutService implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();	
+		HttpSession session = request.getSession();
+		
 		session.invalidate(); //무효화
+		/*
+		session.removeAttribute("memName");
+		session.removeAttribute("memId");
+		*/
 		
 		return "/member/logout.jsp";
 	}

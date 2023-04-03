@@ -2,7 +2,7 @@ package board.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
-
+import java.io.Reader;
 import java.util.List;
 import java.util.Map;
 
@@ -23,13 +23,10 @@ public class BoardDAO {
 	}
 	
 	public BoardDAO() {
-		InputStream inputStream;
 		try {
-			inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-			
-			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+			Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
+			sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		} catch (IOException e) {
-			
 			e.printStackTrace();
 		}
 	}
@@ -89,4 +86,18 @@ public class BoardDAO {
 		sqlSession.commit(); // update문은 rock 걸려있으므로 commit까지 해야 한다.
 		sqlSession.close();
 		}
+	
+	public void boardUpdate(Map<String, String> map) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		sqlSession.update("boardSQL.boardUpdate", map);
+		sqlSession.commit();
+		sqlSession.close();
 	}
+	
+	public void boardDelete(String seq) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		sqlSession.delete("boardSQL.boardDelete", Integer.parseInt(seq));
+		sqlSession.commit();
+		sqlSession.close();
+	}
+}

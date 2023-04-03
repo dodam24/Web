@@ -42,11 +42,11 @@
 		onclick="location.href='/miniProject_jQuery/board/boardList.do?pg=${pg}'">
 	
 		<span id="boardViewSpan">
-			<input type="button" value="글수정" id="boardUpdateBtn">
+			<input type="button" value="글수정" id="boardUpdateFormBtn">
 			<input type="button" value="글삭제" id="boardDeleteBtn">
 		</span>
 		
-		<input type="button" value="답글" id="boardReplyBtn">
+		<input type="button" value="답글" id="boardReplyFormBtn">
 	</form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>

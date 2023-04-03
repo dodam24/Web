@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- 중복 아이디 체크 -->
-	<select id="isExistID" parameterType="String" resultType="member">
+	<select id="isExistId" parameterType="String" resultType="member">
 		select * from member where id=#{id}
 	</select>
 	

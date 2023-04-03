@@ -47,53 +47,36 @@
 <script type="text/javascript" src="../js/jquery-3.6.4.min.js"></script>
 
 <script type="text/javascript">
-$('#boardWriteBtn').click(function(){
-	$('#subjectDiv').empty();
-	$('#contentDiv').empty();
-	
-	if($('#subject').val() == ''){
-		$('#subjectDiv').text('제목을 입력하세요');
-		$('#subjectDiv').focus();
-	}
-	else if($('#content').val() == ''){
-		$('#contentDiv').text('내용을 입력하세요');
-		$('#content').focus();
-	}
-	else{
-		$.ajax({
-			type: 'post',
-			url: '/miniProject_jQuery/board/boardWrite.do',
-			//data: 'subject='+$('#subject').val() + '&content='+$('content').val(),
-			data: $('#boardWriteForm').serialize(),
-			success: function(){
-				alert('글작성 완료!!');
-				location.href='/miniProject_jQuery/board/boardList.do?pg=1';
-			},
-			error: function(err){
-				console.log(err);
-			}
-		});
-	}
-});
-</script>
-
-<script type="text/javascript">
-function checkBoardWrite(){
-	
-	document.getElementById("subjectDiv").innerText = "";
-	document.getElementById("contentDiv").innerText = "";
-	
-	if(document.getElementById("subject").value == ""){
-		document.getElementById("subjectDiv").innerText = "제목 입력";
-		document.boardWriteForm.subject.focus();
-	
-	}else if(document.getElementById("content").value == ""){
-		document.getElementById("contentDiv").innerText = "내용 입력";
-		document.boardWriteForm.content.focus();
+$(function(){
+	$('#boardWriteBtn').click(function(){
+		$('#subjectDiv').empty();
+		$('#contentDiv').empty();
 		
-	}else
-		document.boardWriteForm.submit();
-}
+		if($('#subject').val() == ''){
+			$('#subjectDiv').text('제목을 입력하세요');
+			$('#subjectDiv').focus();
+		
+		}else if($('#content').val() == ''){
+			$('#contentDiv').text('내용을 입력하세요');
+			$('#content').focus();
+		
+		}else{
+			$.ajax({
+				type: 'post',
+				url: '/miniProject_jQuery/board/boardWrite.do',
+				//data: 'subject='+$('#subject').val() + '&content='+$('content').val(),
+				data: $('#boardWriteForm').serialize(),
+				success: function(){
+					alert('글작성 완료!!');
+					location.href='/miniProject_jQuery/board/boardList.do?pg=1';
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}
+	});
+});
 </script>
 </body>
 </html>

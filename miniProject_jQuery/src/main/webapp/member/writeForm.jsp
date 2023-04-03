@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-<form name="writeForm" id="writeForm">
+<form name="writeForm" method="post" action="/miniProject_jQuery/member/write.do">
 <h2>회원가입</h2>
 <table border="1" cellpadding="5" cellspacing="0">
 	<tr>
@@ -139,7 +139,7 @@ $('#id').focusout(function(){
 					$('#check').val($('#id').val());
 				}
 			},
-			error: function(err){ // 에러 발생 시, 콘솔창에 에러 출력
+			error: function(err){ //에러 발생 시, 콘솔창에 에러 출력
 				console.log(err);
 			}
 		})

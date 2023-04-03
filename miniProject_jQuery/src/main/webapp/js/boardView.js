@@ -5,7 +5,7 @@ $(document).ready(function(){
 		data: 'seq=' + $('#seq').val(), // {'seq' : $('#seq').val()}
 		dataType: 'json',
 		success: function(data){
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 		
 			$('#subjectSpan').text(data.subject);
 			$('#seqSpan').text(data.seq);
@@ -26,13 +26,19 @@ $(document).ready(function(){
 });
 
 //글수정 폼
-$('#boardUpdateBtn').click(function(){
+$('#boardUpdateFormBtn').click(function(){
 	$('#boardViewForm').attr('action', '/miniProject_jQuery/board/boardUpdateForm.do');
 	$('#boardViewForm').submit(); //seq, pg
 });
 
+//글삭제 - 1페이지를 보여준다
+$('#boardDeleteBtn').click(function(){
+	$('#boardViewForm').attr('action', '/miniProject_jQuery/board/boardDeleteForm.do');
+	$('#boardViewForm').submit(); //seq, pg
+});
+
 //답글쓰기 폼
-$('#boardReplyBtn').click(function(){
+$('#boardReplyFormBtn').click(function(){
 	$('#boardViewForm').attr('action', '/miniProject_jQuery/board/boardReplyForm.do');
 	$('#boardViewForm').submit(); //seq, pg
-})
+});
